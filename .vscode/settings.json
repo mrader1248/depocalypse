@@ -1,0 +1,5 @@
+{
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true,
+    "python.pythonPath": "/home/michael/anaconda3/envs/django/bin/python"
+}
