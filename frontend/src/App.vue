@@ -17,9 +17,11 @@
 
         <span class="text-h4">depoc@lypse</span>
       </div>
+
+      <v-spacer></v-spacer>
     </v-app-bar>
 
-    <v-main>
+    <v-main class="ma-4">
       <router-view/>
     </v-main>
   </v-app>
