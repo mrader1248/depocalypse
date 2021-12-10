@@ -7,16 +7,16 @@ from ..models import Commodity
 
 @api_view(['GET'])
 def storage_list(request):
-    commodities = Commodity.objects.prefetch_related('commoditytransaction_set').all()
-    amount_per_commodity = {
-        commodity.id: commodity.commoditytransaction_set.aggregate(Sum('amount'))['amount__sum'] or 0
-        for commodity in commodities
-    }
+    commodities = (
+        Commodity.objects
+        .annotate(amount=Sum('commoditytransaction__amount'))
+        .filter(amount__isnull=False, amount__gt=0)
+    )
     response = [
         {
             'commodityName': commodity.name,
-            'amount': amount_per_commodity[commodity.id],
-            'totalCalorificValueInKcal': amount_per_commodity[commodity.id] * commodity.calorific_value_in_kcal
+            'amount': commodity.amount,
+            'totalCalorificValueInKcal': commodity.amount * commodity.calorific_value_in_kcal
         }
         for commodity in commodities
     ]
