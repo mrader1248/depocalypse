@@ -1,7 +1,7 @@
-from .storage_view import storage_list
+from .inventory_view import inventory
 
 __all__ = [
     view.__name__ for view in [
-        storage_list
+        inventory
     ]
 ]

@@ -6,7 +6,7 @@ from ..models import Commodity
 
 
 @api_view(['GET'])
-def storage_list(request):
+def inventory(request):
     commodities = (
         Commodity.objects
         .annotate(amount=Sum('commoditytransaction__amount'))
