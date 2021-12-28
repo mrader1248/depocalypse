@@ -13,8 +13,10 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
+  // The following two lines were commented out to disable the vue-router 
+  // history mode (otherwise the pages would not load).
+  // mode: 'history',
+  // base: process.env.BASE_URL,
   routes
 })
 
