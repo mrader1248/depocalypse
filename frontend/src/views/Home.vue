@@ -5,7 +5,7 @@
     <v-data-table
       :headers="inventoryItemHeaders"
       :items="inventoryItems"
-      :items-per-page="20" />
+      :items-per-page="5" />
 
     <v-alert
       type='error' 
