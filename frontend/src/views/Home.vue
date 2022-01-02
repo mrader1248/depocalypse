@@ -37,13 +37,7 @@
     mounted() {
       axios.get('/depot/inventory/')
         .then((response) => {
-          if (response.status == 200) {
-            this.inventoryItems = response.data;
-          } else {
-            this.showError('The inventory could not be loaded.');
-            console.log('/depot/inventory returned with HTTP error code ' + response.status);
-            console.log(response);
-          }
+          this.inventoryItems = response.data;
         })
         .catch((error) => {
           this.showError('The inventory could not be loaded.');
