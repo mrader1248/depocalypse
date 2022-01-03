@@ -15,7 +15,7 @@
           width="40"
         />
 
-        <span class="text-h4">depoc@lypse</span>
+        <span class="text-h4">Depocalypse</span>
       </div>
 
       <v-spacer></v-spacer>
