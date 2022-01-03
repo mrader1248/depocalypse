@@ -14,6 +14,7 @@ def inventory(request):
     )
     response = [
         {
+            'commodityId': commodity.id,
             'commodityName': commodity.name,
             'amount': commodity.amount,
             'totalCalorificValueInKcal': commodity.amount * commodity.calorific_value_in_kcal
