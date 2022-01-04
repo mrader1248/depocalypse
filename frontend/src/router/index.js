@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Outlook from '../views/Outlook.vue'
 
 Vue.use(VueRouter)
 
@@ -10,6 +11,11 @@ const routes = [
     name: 'Home',
     component: Home
   },
+  {
+    path: '/outlook',
+    name: 'Outlook',
+    component: Outlook
+  }
 ]
 
 const router = new VueRouter({
