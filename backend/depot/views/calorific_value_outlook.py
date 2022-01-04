@@ -1,3 +1,5 @@
+import datetime
+
 from collections import defaultdict
 from itertools import accumulate
 
@@ -8,7 +10,7 @@ from ..models import Commodity, CommodityTransaction
 
 
 @api_view(['GET'])
-def calorific_value_over_time(request):
+def calorific_value_outlook(request):
 
     kcal_by_commodity_id = {
         commodity.id: commodity.calorific_value_in_kcal 
@@ -30,8 +32,14 @@ def calorific_value_over_time(request):
         kcal_change_by_date[best_before_date] -= kcal
     
     dates = sorted(kcal_change_by_date)
-    total_kcal_values = accumulate(kcal_change_by_date[date] for date in dates)
-    return Response([
-        {date.isoformat(): kcal}
-        for date, kcal in zip(dates, total_kcal_values)
-    ])
+    total_kcal_values = list(accumulate(kcal_change_by_date[date] for date in dates))
+
+    date_start = datetime.date.today()
+    j_start = next(j for j, date in enumerate(dates) if date > date_start)
+    dates = [date_start] + dates[j_start:]
+    total_kcal_values = total_kcal_values[j_start:]
+
+    return Response({
+        'dates': dates,
+        'calorificValues': total_kcal_values
+    })
