@@ -30,7 +30,7 @@ export default {
         },
         yaxis: {
           title: {
-            text: "Inventory calorific value"
+            text: "Inventory calorific value [kcal]"
           }
         },
         dataLabels: {
@@ -38,11 +38,14 @@ export default {
         },
         tooltip: {
           x: { format: "yyyy-MM-dd" }
+        },
+        stroke: {
+          curve: "straight"
         }
       },
       chartSeries: [
         {
-          name: "Inventory calorific value",
+          name: "Inventory calorific value [kcal]",
           data: [],
         },
       ],
