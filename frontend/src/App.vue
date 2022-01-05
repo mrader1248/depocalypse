@@ -53,7 +53,7 @@ export default {
     return {
       drawer: false,
       drawerItems: [
-        {title: 'Home', icon: 'mdi-home', route: '/'},
+        {title: 'Inventory', icon: 'mdi-clipboard-list-outline', route: '/'},
         {title: 'Outlook', icon: 'mdi-chart-areaspline', route: '/outlook'}
       ]
     }
