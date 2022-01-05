@@ -1,5 +1,7 @@
 <template>
-  <div class="over-time">
+  <div class="outlook">
+    <h4 class="text-h4">Outlook</h4>
+
     <apex-chart
       type="area"
       width="800"
