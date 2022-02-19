@@ -8,7 +8,7 @@
       :items-per-page="5" />
 
     <v-alert
-      type='error' 
+      type='error'
       dismissible
       v-model='isErrorMessageVisible'>
       {{ errorMessage }}
@@ -22,7 +22,7 @@
 
   export default {
     name: 'Home',
-    data: function() { 
+    data: function() {
       return {
         errorMessage: '',
         isErrorMessageVisible: false,
